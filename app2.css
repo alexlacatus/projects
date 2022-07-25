@@ -131,6 +131,9 @@ div[class^=p2move]{
     margin-bottom: 100px;
     text-align: center;
 }
+h2{
+    text-align: center;
+}
 div[class^=Mo]{
     margin-top: 100px;
     text-align: center;

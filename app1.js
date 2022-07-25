@@ -14,7 +14,7 @@ let piece
 let space;
 let whiteTurn=true;
 let blackMoves=30
-let whiteMoves=3
+let whiteMoves=30
 
 let whiteScore=0
 let blackScore=0
@@ -23,7 +23,7 @@ var bscore=document.getElementsByClassName("p2score")
 var wmoves=document.getElementsByClassName("p1moves")
 var bmoves=document.getElementsByClassName("p2moves")
 var main=document.getElementsByClassName("main")
-var movesRemaining=document.getElementsByClassName("movesRemaining")
+var movesRemaining=document.getElementsByClassName("movesRemaining")[0].firstChild
 //console.log(white)
 //console.log(pieces[0].getAttribute("tag"))
  
@@ -181,7 +181,7 @@ function selectNextSpace(){
      else piece.style=black
      console.log(piece.parentNode.id)
      if(possibleNextCoords.includes(space.id)){
-        if(space.firstChild!=null&&space.firstChild.id[0]==piece.id[0]) return
+        if(space.firstChild!=null&&space.firstChild.id[0]==piece.id[0]) return  
         
         if(space.firstChild!=null&&space.firstChild.id.length<=piece.id.length){
             console.log("att");
@@ -191,15 +191,17 @@ function selectNextSpace(){
                  console.log(piece.id)
             }
             space.insertAdjacentElement("afterBegin",piece);
+            update();
             whiteTurn=!whiteTurn;
         } 
         else{
             if(space.firstChild==null){
                 space.insertAdjacentElement("afterBegin",piece);
+                update();
                 whiteTurn=!whiteTurn;
             }
         }
-        if(piece.id.length!=4&&(piece.id[0]=="w"&&space.id[0]=="h" ||piece.id[0]=="w"&&space.id[0]=="i")){
+        if(piece.id.length!=4&&(piece.id[0]=="w"&&space.id[0]=="h" ||piece.id[0]=="b"&&space.id[0]=="a")){
             piece.id=piece.id+"++";
         } 
 
@@ -207,7 +209,7 @@ function selectNextSpace(){
      console.log(piece.parentNode.id)
      //piece.style.color=white;
      //piece=null;
-     update();
+     
      selected=false;
 
 
@@ -215,8 +217,18 @@ function selectNextSpace(){
 
 
 function update(){
-    if(whiteTurn)blackMoves--;
-    else whiteMoves--;
+    if(!whiteTurn){
+        blackMoves--;
+        movesRemaining.textContent="Player 1's turn  \n Moves remaining:"
+        movesRemaining.style.color="blanchedalmond"
+    }
+    else{
+
+     whiteMoves--;
+     movesRemaining.textContent="Player 2's turn \n Moves remaining:"
+     movesRemaining.style.color="darkblue"
+
+    }
     whiteScore=0;
     blackScore=0;
     for(let i=0;i<pieces.length;i++){
@@ -250,13 +262,15 @@ function endOfGame(){
             bmoves[0].textContent="";
         if(whiteScore>blackScore){
             
-            movesRemaining[0].textContent="PLAYER 1 WON"
-            movesRemaining[0].style.color="blanchedalmond"
-            movesRemaining[0].style.margin=200+"px " +20+ "px "
+            movesRemaining.textContent="PLAYER 1 WON"
+            movesRemaining.style.color="blanchedalmond"
+            movesRemaining.style.margin=200+"px " +20+ "px "
         }
         else
         {
-            movesRemaining[0].textContent="PLAYER 2 WON"
+            movesRemaining.textContent="PLAYER 2 WON"
+            movesRemaining.style.color="darkblue"
+            movesRemaining.style.margin=200+"px " +20+ "px "
         }
     }
 
