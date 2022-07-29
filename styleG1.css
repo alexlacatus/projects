@@ -69,6 +69,26 @@ span[id^="w"][id$="+"]{
     -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
 }
+
+span[id^="w"][id$="+"]:hover{
+    
+    background: linear-gradient(45deg, aqua,aqua, gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+span[id^="w"][id$="+"]:active{
+    
+    background: linear-gradient(45deg, red,red, gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
 span[id^="w"][id$="++"]{
     
         background: linear-gradient(45deg, blanchedalmond,blanchedalmond, gold,red);
@@ -77,6 +97,24 @@ span[id^="w"][id$="++"]{
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
         -webkit-text-fill-color: transparent;
+}
+span[id^="w"][id$="++"]:hover{
+    
+    background: linear-gradient(45deg, aqua,aqua, gold,red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+span[id^="w"][id$="++"]:active{
+    
+    background: linear-gradient(45deg, red,red, gold,red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 span[id^="b"]{
     
@@ -91,9 +129,44 @@ span[id^="b"][id$="+"]{
     -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
 }
+span[id^="b"][id$="+"]:hover{
+    
+    background: linear-gradient(45deg, aqua,aqua, gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}span[id^="b"][id$="+"]:active{
+    
+    background: linear-gradient(45deg, red,red, gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
 span[id^="b"][id$="++"]{
     
     background: linear-gradient(45deg, darkblue,darkblue, gold,red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+span[id^="b"][id$="++"]:hover{
+    
+    background: linear-gradient(45deg, aqua,aqua, gold,red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+span[id^="b"][id$="++"]:active{
+    
+    background: linear-gradient(45deg, red,red, gold,red);
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
